@@ -3,7 +3,7 @@ library(tidyverse)
 library(DT)
 
 # Read in data
-data <- read_rds("../shark-resources.rds") %>% 
+data <- read_rds("shark-resources.rds") %>% 
   mutate(year = as.integer(year)) %>% 
   select(resource_id, resource, year, DOI, source) %>% 
   rename(ID = resource_id, Resource = resource,
@@ -30,7 +30,7 @@ ui <- function(input, output) {
            ),
            tabPanel(
              "About",
-             includeMarkdown("../readme.md")
+             includeMarkdown("README.md")
            )
   )
 }
