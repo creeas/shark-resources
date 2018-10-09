@@ -1,5 +1,5 @@
 ---
-title: "README.rmd"
+title: "README.Rmd"
 output:
   md_document:
     variant: markdown_github
