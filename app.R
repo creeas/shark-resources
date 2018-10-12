@@ -12,7 +12,17 @@ data <- read_rds("shark-resources.rds") %>%
 
 # User interface
 ui <- function(input, output) {
-  navbarPage("Shark Resources",
+  fluidPage(
+    list(tags$head(HTML('<link rel="icon", href="sharkreferenceslogo2.png", 
+                        type="image/png" />'))),
+    div(style="padding: 1px 0px; width: '100%'",
+        titlePanel(
+          title="", windowTitle="My Window Title"
+        )
+    ),
+    navbarPage(
+      title=div("Shark Resources", "compiled by:",img(src="sharkreferenceslogo2.png", height=25, width=75)),
+  #navbarPage("Shark Resources",
            tabPanel("References",
                     sidebarLayout(
                       sidebarPanel(
@@ -32,7 +42,7 @@ ui <- function(input, output) {
              "About",
              includeMarkdown("README.md")
            )
-  )
+             ))
 }
 
 # Server
